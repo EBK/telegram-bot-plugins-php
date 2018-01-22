@@ -1,0 +1,23 @@
+{
+  "name": "ebk/telegram-bot-plugins-php",
+  "description": "Telegram bot plugins used in our Telegram group",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Arda Kilicdagi",
+      "email": "ardakilicdagi@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "autoload": {
+    "psr-4": {
+      "Teleplugins\\": "src/"
+    }
+  },
+  "require": {
+    "ext-gd": "*",
+    "laravel/lumen-framework": "5.5.*",
+    "guzzlehttp/guzzle": "^6.3"
+  }
+}
