@@ -38,6 +38,18 @@ After that, simply add these to your `responses` rows in database.
   'created_at' => date('Y-m-d H:i:s'),
   'updated_at' => date('Y-m-d H:i:s'),
 ],
+[
+  'bot_id' => 3
+  'command' => 'calc', //Without the leading slash
+  'pattern' => '',
+  'response_type' => 'external',
+  'response_data' => 'MathParserPlugin',
+  'plugin_namespace' => 'Teleplugins', //These two lines will call \Teleplugins\MathParserPlugin Class
+  'as_quote' => 'y',
+  'preview_links_if_any' => 'n',
+  'created_at' => date('Y-m-d H:i:s'),
+  'updated_at' => date('Y-m-d H:i:s'),
+],
 
 ```
 
@@ -45,7 +57,9 @@ And you're set.
 
 Thanks
 --------
-We'd like to thank [Cryptohistory](https://cryptohistory.org/), as we're powering our Remote Responses Plugin from their service.
+* [Anthony Ferrara
+ (Ircmaxell)](https://github.com/ircmaxell) for his awesome [Math Parser Plugin](https://github.com/ircmaxell/php-math-parser)
+* We'd like to thank [Cryptohistory](https://cryptohistory.org/), as we're powering our Remote Responses Plugin from their service.
 
 Donations
 --------
