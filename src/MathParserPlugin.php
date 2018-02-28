@@ -15,7 +15,8 @@
 
 namespace Telebot\Plugins;
 
-use PHPMathParser\Math;
+use MathParser\StdMathParser;
+use MathParser\Interpreting\Evaluator;
 
 class MathParserPlugin
 {
@@ -46,10 +47,12 @@ class MathParserPlugin
             throw new \Exception('Bot response should be command');
         }
 
-        $math = new Math();
-        $response = $math->evaluate($this->rawInput);
+        $math = new StdMathParser();
+        $parse = $math->parse($this->rawInput);
+        $evaluator = new Evaluator();
+        $response = $parse->accept($evaluator);
 
-
+        //For what to return, you can refer to Telebot.php or Telegram API
         return [
             'name' => 'text',
             'contents' => $response,

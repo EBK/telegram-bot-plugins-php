@@ -57,9 +57,9 @@ And you're set.
 
 Thanks
 --------
-* [Anthony Ferrara
- (Ircmaxell)](https://github.com/ircmaxell) for his awesome [Math Parser Plugin](https://github.com/ircmaxell/php-math-parser)
-* We'd like to thank [Cryptohistory](https://cryptohistory.org/), as we're powering our Remote Responses Plugin from their service.
+* [Frank Wikström
+ (mossadal)](https://github.com/mossadal) for his awesome [Math Parser Plugin](https://github.com/mossadal/math-parser)
+* [Cryptohistory](https://cryptohistory.org/), as we're powering our Remote Responses Plugin from their service.
 
 Donations
 --------
@@ -70,3 +70,5 @@ Although non mandatory, we'd appreciate if you could buy us some beer, coffee, o
 **ETH:** TODO
 
 **LTC:** TODO
+
+**NEO** TODO
