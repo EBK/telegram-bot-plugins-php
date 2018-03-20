@@ -25,3 +25,6 @@ Homestead.json
 
 # OS X
 **/.DS_Store
+
+# PHP-CS-Fixer
+.php_cs.cache

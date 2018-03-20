@@ -50,6 +50,18 @@ After that, simply add these to your `responses` rows in database.
   'created_at' => date('Y-m-d H:i:s'),
   'updated_at' => date('Y-m-d H:i:s'),
 ],
+[
+  'bot_id' => 4
+  'command' => 'p', //Without the leading slash
+  'pattern' => '',
+  'response_type' => 'external',
+  'response_data' => 'CryptoPricePlugin',
+  'plugin_namespace' => 'Teleplugins', //These two lines will call \Teleplugins\CryptoPricePlugin Class
+  'as_quote' => 'y',
+  'preview_links_if_any' => 'n',
+  'created_at' => date('Y-m-d H:i:s'),
+  'updated_at' => date('Y-m-d H:i:s'),
+],
 
 ```
 
@@ -60,14 +72,15 @@ Thanks
 * [Frank Wikström
  (mossadal)](https://github.com/mossadal) for his awesome [Math Parser Plugin](https://github.com/mossadal/math-parser)
 * [Cryptohistory](https://cryptohistory.org/), as we're powering our Remote Responses Plugin from their service.
+* [Coinmarketcap API](https://coinmarketcap.com/api/) which powers the CryptoPricePlugin.
 
 Donations
 --------
-Although non mandatory, we'd appreciate if you could buy us some beer, coffee, or whatever you choose. You can find the addresses below:
+Although not mandatory, we'd appreciate if you could buy us some beer, coffee, or whatever you choose. You can find the addresses below:
 
 **BTC:** 1GTN57oRULcfbjc3Y36too4ZEWkpFifDud
 
-**ETH:** TODO
+**ETH:** 0x3C2b0AC49257300DaB96dF8b49d254Bb696B3458
 
 **LTC:** TODO
 
