@@ -51,7 +51,7 @@ class CryptoPricePlugin
         // Default output (fallback) message
         $output = 'Coin not found';
         try {
-            $result = $client->request('GET', 'https://api.coinmarketcap.com/v1/ticker/?limit=0');
+            $result = $client->request('GET', 'https://api.coinmarketcap.com/v1/ticker/?limit=0&convert=ETH');
         } catch (RequestException $e) {
             $output = 'Error';
             if ($e->hasResponse()) {
@@ -67,7 +67,7 @@ class CryptoPricePlugin
             foreach ($pricesArray as $coin) {
                 if ($coin['symbol'] === strtoupper(trim($this->rawInput))) {
                     $output = 'Coin: ' . $coin['name'] . ' (' . $coin['symbol'] . ")\n";
-                    $output .= 'Price: ' . $coin['price_btc'] . ' BTC | ' . $coin['price_usd'] . " USD\n";
+                    $output .= 'Price: ' . $coin['price_btc'] . ' BTC | ' . $coin['price_eth'] . ' ETH | ' . $coin['price_usd'] . " USD\n";
                     $output .= 'Changes: 1H: ' . ($coin['percent_change_1h'] > 0 ? '+' : '') . $coin['percent_change_1h'] . '% | ' .
                         '24H: ' . ($coin['percent_change_24h'] > 0 ? '+' : '') . $coin['percent_change_24h'] . '% | ' .
                         '7D: ' . ($coin['percent_change_7d'] > 0 ? '+' : '') . $coin['percent_change_7d'] . "%\n";
