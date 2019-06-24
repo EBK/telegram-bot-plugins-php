@@ -61,19 +61,19 @@ class CryptoRoiPlugin
 
         if($result->getStatusCode() === 200) {
             $roiData = json_decode($result->getBody()->getContents(), true);
-            $output = 'Token Name: '.$roiData['name'].'('.$roiData['description'].')'."\n";
+            $output = 'Token Name: '.$roiData['name'].' ('.$roiData['description'].')'."\n";
             $output .= 'Token Symbol: '.$roiData['symbol']."\n";
-            $output .= 'BTC price at launch: '.$roiData['btc_price_at_launch']."\n";
-            $output .= 'ETH price at launch: '.$roiData['eth_price_at_launch']."\n";
-            $output .= 'USD price at launch: '.$roiData['usd_price_at_launch']."\n";
+            $output .= 'BTC price at launch: '.$this->format($roiData['btc_price_at_launch'])."\n";
+            $output .= 'ETH price at launch: '.$this->format($roiData['eth_price_at_launch'])."\n";
+            $output .= 'USD price at launch: '.$this->format($roiData['usd_price_at_launch'])."\n";
 
-            $output .= 'BTC price at presale: '.$roiData['btc_price_at_presale']."\n";
-            $output .= 'ETH price at presale: '.$roiData['eth_price_at_presale']."\n";
-            $output .= 'USD price at presale: '.$roiData['usd_price_at_presale']."\n";
+            $output .= 'BTC price at presale: '.$this->format($roiData['btc_price_at_presale'])."\n";
+            $output .= 'ETH price at presale: '.$this->format($roiData['eth_price_at_presale'])."\n";
+            $output .= 'USD price at presale: '.$this->format($roiData['usd_price_at_presale'])."\n";
 
-            $output .= 'BTC price current: '.$roiData['current_btc_price']."\n";
-            $output .= 'ETH price current: '.$roiData['current_eth_price']."\n";
-            $output .= 'USD price current: '.$roiData['current_usd_price']."\n";
+            $output .= 'BTC price current: '.$this->format($roiData['current_btc_price'])."\n";
+            $output .= 'ETH price current: '.$this->format($roiData['current_eth_price'])."\n";
+            $output .= 'USD price current: '.$this->format($roiData['current_usd_price'])."\n";
 
             $output .= 'ROI BTC: '.$roiData['roi_btc']."\n";
             $output .= 'ROI ETH: '.$roiData['roi_eth']."\n";
@@ -98,6 +98,15 @@ class CryptoRoiPlugin
     public function setEndpoint()
     {
         return 'sendMessage';
+    }
+    
+    /**
+     * Formats the given scientific number to float
+     * @param float $price the price variable such as 2.0E-8
+     * @return string the formatted string
+    */
+    private function format($price) {
+    	return rtrim(sprintf('%.10f', $price), 0);
     }
 
 
